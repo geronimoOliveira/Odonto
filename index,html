@@ -1,0 +1,890 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OdontoBarãoSFS - Implantes Dentários & Prótese Fixa</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
+        }
+        
+        .blue-gradient-text {
+            background: linear-gradient(90deg, #0D75B1 0%, #0C519D 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .green-gradient-text {
+            background: linear-gradient(90deg, #85B80F 0%, #4E8E05 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .hero-gradient {
+            background: linear-gradient(135deg, #E6F3FF 0%, #E7F8E1 100%);
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        
+        .btn-glow:hover {
+            box-shadow: 0 0 15px rgba(13, 117, 177, 0.5);
+        }
+        
+        .testimonial-card {
+            transition: all 0.3s ease;
+        }
+        
+        .testimonial-card:hover {
+            transform: scale(1.03);
+        }
+        
+        .floating {
+            animation: floating 3s ease-in-out infinite;
+        }
+        
+        @keyframes floating {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+            100% { transform: translateY(0px); }
+        }
+    </style>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'odonto-blue': '#0D75B1',
+                        'odonto-dark-blue': '#0C519D',
+                        'odonto-green': '#85B80F',
+                        'odonto-dark-green': '#4E8E05',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-gray-50">
+    <!-- Header/Navigation -->
+    <header class="sticky top-0 z-50 bg-white shadow-md">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center">
+                <div class="h-12 w-12 mr-2">
+                    <div class="h-full w-full bg-gradient-to-r from-odonto-blue to-odonto-green rounded-full flex items-center justify-center text-white font-bold text-xl">OB</div>
+                </div>
+                <h1 class="text-xl font-bold blue-gradient-text">Odonto<span class="green-gradient-text">BarãoSFS</span></h1>
+            </div>
+            <nav class="hidden md:flex space-x-8">
+                <a href="#benefits" class="text-gray-700 hover:text-odonto-blue font-medium">Benefícios</a>
+                <a href="#process" class="text-gray-700 hover:text-odonto-blue font-medium">Como Funciona</a>
+                <a href="#testimonials" class="text-gray-700 hover:text-odonto-blue font-medium">Depoimentos</a>
+                <a href="#faq" class="text-gray-700 hover:text-odonto-blue font-medium">Dúvidas</a>
+            </nav>
+            <a href="#cta" class="hidden md:block bg-gradient-to-r from-odonto-blue to-odonto-green text-white px-6 py-2 rounded-full font-medium hover:opacity-90 transition duration-300 btn-glow">Agendar Avaliação</a>
+            <button class="md:hidden text-gray-700" id="mobile-menu-button">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div class="md:hidden hidden bg-white w-full py-4 px-4 border-t" id="mobile-menu">
+            <div class="flex flex-col space-y-4">
+                <a href="#benefits" class="text-gray-700 hover:text-odonto-blue font-medium">Benefícios</a>
+                <a href="#process" class="text-gray-700 hover:text-odonto-blue font-medium">Como Funciona</a>
+                <a href="#testimonials" class="text-gray-700 hover:text-odonto-blue font-medium">Depoimentos</a>
+                <a href="#faq" class="text-gray-700 hover:text-odonto-blue font-medium">Dúvidas</a>
+                <a href="#cta" class="bg-gradient-to-r from-odonto-blue to-odonto-green text-white px-6 py-2 rounded-full font-medium text-center">Agendar Avaliação</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-gradient py-16 md:py-24 px-4">
+        <div class="container mx-auto flex flex-col md:flex-row items-center">
+            <div class="md:w-1/2 mb-12 md:mb-0">
+                <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6 leading-tight">
+                    Volte a mastigar, sorrir e viver com segurança <span class="blue-gradient-text">— como se seus dentes nunca tivessem ido embora.</span>
+                </h1>
+                <p class="text-lg text-gray-700 mb-8">
+                    Implantes dentários com tecnologia avançada em São Francisco do Sul. Atendimento humanizado, condições especiais e resultados naturais.
+                </p>
+                <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+                    <a href="#cta" class="bg-gradient-to-r from-odonto-blue to-odonto-green text-white px-8 py-3 rounded-full font-bold text-center hover:opacity-90 transition duration-300 btn-glow shadow-lg">
+                        Agende sua avaliação gratuita
+                    </a>
+                    <a href="tel:+5547999999999" class="border-2 border-odonto-blue text-odonto-blue px-8 py-3 rounded-full font-bold text-center hover:bg-odonto-blue hover:text-white transition duration-300">
+                        <i class="fas fa-phone mr-2"></i> Ligue agora
+                    </a>
+                </div>
+                <div class="mt-8 flex items-center space-x-2">
+                    <div class="flex -space-x-2">
+                        <img src="https://images.unsplash.com/photo-1594824476967-48c8b964273f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=128&h=128&q=60" alt="Patient" class="w-10 h-10 rounded-full border-2 border-white">
+                        <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=128&h=128&q=60" alt="Patient" class="w-10 h-10 rounded-full border-2 border-white">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=128&h=128&q=60" alt="Patient" class="w-10 h-10 rounded-full border-2 border-white">
+                    </div>
+                    <div class="text-sm text-gray-700">
+                        <p><span class="font-bold text-odonto-blue">+127</span> sorrisos transformados este ano</p>
+                        <div class="flex items-center">
+                            <i class="fas fa-star text-yellow-400 mr-1"></i>
+                            <i class="fas fa-star text-yellow-400 mr-1"></i>
+                            <i class="fas fa-star text-yellow-400 mr-1"></i>
+                            <i class="fas fa-star text-yellow-400 mr-1"></i>
+                            <i class="fas fa-star text-yellow-400 mr-1"></i>
+                            <span class="ml-1">5.0 (87 avaliações)</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="md:w-1/2 relative">
+                <div class="relative max-w-md mx-auto">
+                    <img src="https://images.unsplash.com/photo-1627622412995-b9a9a0dc8a7e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=640&h=640&q=80" alt="Happy patient with perfect smile" class="rounded-2xl shadow-xl w-full">
+                    <div class="absolute -bottom-5 -right-5 bg-white p-4 rounded-xl shadow-lg hidden md:block">
+                        <div class="flex items-center">
+                            <div class="bg-odonto-green bg-opacity-20 p-3 rounded-full mr-3">
+                                <i class="fas fa-tooth text-odonto-green text-xl"></i>
+                            </div>
+                            <div>
+                                <p class="text-sm font-semibold text-gray-700">+15 anos de experiência</p>
+                                <p class="text-xs text-gray-500">Em implantes dentários</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="absolute -top-10 -left-10 hidden lg:block">
+                    <div class="bg-white p-4 rounded-xl shadow-lg w-40 floating">
+                        <div class="flex items-center mb-2">
+                            <div class="h-2 w-2 bg-odonto-green rounded-full mr-1"></div>
+                            <div class="text-xs font-semibold text-gray-700">ODIS BÁSICO</div>
+                        </div>
+                        <p class="text-sm text-gray-700">Paciente com implante unitário</p>
+                    </div>
+                </div>
+                <div class="absolute -bottom-10 -left-10 hidden lg:block">
+                    <div class="bg-white p-4 rounded-xl shadow-lg w-40 floating" style="animation-delay: 0.5s;">
+                        <div class="flex items-center mb-2">
+                            <div class="h-2 w-2 bg-odonto-blue rounded-full mr-1"></div>
+                            <div class="text-xs font-semibold text-gray-700">ODIS COMPLETO</div>
+                        </div>
+                        <p class="text-sm text-gray-700">Paciente com prótese sobre implante</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section id="benefits" class="py-16 px-4 bg-white">
+        <div class="container mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+                    Por que você deve considerar implantes agora <span class="green-gradient-text">(e não depois)</span>
+                </h2>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+                    Perder um dente não afeta só o sorriso. Ele muda sua maneira de mastigar, falar, se alimentar... e viver. A boa notícia? Você pode reverter isso.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="feature-card bg-white rounded-xl p-6 shadow-md border border-gray-100 transition duration-300">
+                    <div class="bg-odonto-blue bg-opacity-10 w-14 h-14 rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-utensils text-odonto-blue text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">Mastigação eficiente</h3>
+                    <p class="text-gray-600">Esqueça as restrições — volte a comer o que quiser, com conforto e segurança.</p>
+                </div>
+                
+                <div class="feature-card bg-white rounded-xl p-6 shadow-md border border-gray-100 transition duration-300">
+                    <div class="bg-odonto-green bg-opacity-10 w-14 h-14 rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-smile-beam text-odonto-green text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">Estética natural</h3>
+                    <p class="text-gray-600">Dentes fixos, firmes, com aparência real e harmonia facial preservada.</p>
+                </div>
+                
+                <div class="feature-card bg-white rounded-xl p-6 shadow-md border border-gray-100 transition duration-300">
+                    <div class="bg-odonto-blue bg-opacity-10 w-14 h-14 rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-bone text-odonto-blue text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">Preservação do osso</h3>
+                    <p class="text-gray-600">Evite o afundamento da face e o envelhecimento precoce do seu rosto.</p>
+                </div>
+                
+                <div class="feature-card bg-white rounded-xl p-6 shadow-md border border-gray-100 transition duration-300">
+                    <div class="bg-odonto-green bg-opacity-10 w-14 h-14 rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-user-shield text-odonto-green text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">Autoconfiança restaurada</h3>
+                    <p class="text-gray-600">Sorria sem medo, fale sem receio e viva sem limitações.</p>
+                </div>
+            </div>
+            
+            <div class="mt-16 bg-gradient-to-r from-odonto-blue to-odonto-green rounded-xl p-8 md:p-12 text-white">
+                <div class="max-w-4xl mx-auto text-center">
+                    <h3 class="text-2xl md:text-3xl font-bold mb-4">Você merece um sorriso completo.</h3>
+                    <p class="text-lg mb-6">E a melhor parte? Ele está mais acessível do que você imagina.</p>
+                    <a href="#cta" class="inline-block bg-white text-odonto-blue px-8 py-3 rounded-full font-bold hover:bg-gray-100 transition duration-300 btn-glow shadow-lg">
+                        Descubra seu plano personalizado
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section id="process" class="py-16 px-4 bg-gray-50">
+        <div class="container mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+                    <span class="blue-gradient-text">Como funciona</span> o tratamento com implantes na OdontoBarãoSFS
+                </h2>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+                    Um processo simples, seguro e com resultados previsíveis.
+                </p>
+            </div>
+            
+            <div class="flex flex-col md:flex-row items-center mb-16">
+                <div class="md:w-1/2 mb-8 md:mb-0 md:pr-12">
+                    <h3 class="text-2xl font-bold text-gray-900 mb-6 flex items-center">
+                        <span class="bg-odonto-blue text-white w-10 h-10 rounded-full flex items-center justify-center mr-4">1</span>
+                        Avaliação personalizada
+                    </h3>
+                    <p class="text-gray-600 mb-6">
+                        Nossos especialistas realizam uma avaliação completa, com exames de imagem e discussão sobre suas expectativas e necessidades.
+                    </p>
+                    <ul class="space-y-3">
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-odonto-green mt-1 mr-2"></i>
+                            <span class="text-gray-700">Tomografia 3D de alta precisão</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-odonto-green mt-1 mr-2"></i>
+                            <span class="text-gray-700">Análise da saúde bucal e óssea</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-odonto-green mt-1 mr-2"></i>
+                            <span class="text-gray-700">Planejamento digital do tratamento</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="md:w-1/2">
+                    <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=640&q=80" alt="Dentist examining patient" class="rounded-xl shadow-lg w-full">
+                </div>
+            </div>
+            
+            <div class="flex flex-col md:flex-row-reverse items-center mb-16">
+                <div class="md:w-1/2 mb-8 md:mb-0 md:pl-12">
+                    <h3 class="text-2xl font-bold text-gray-900 mb-6 flex items-center">
+                        <span class="bg-odonto-blue text-white w-10 h-10 rounded-full flex items-center justify-center mr-4">2</span>
+                        Cirurgia de implante
+                    </h3>
+                    <p class="text-gray-600 mb-6">
+                        Realizada com técnica minimamente invasiva para maior conforto e recuperação acelerada.
+                    </p>
+                    <ul class="space-y-3">
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-odonto-green mt-1 mr-2"></i>
+                            <span class="text-gray-700">Anestesia local sem dor</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-odonto-green mt-1 mr-2"></i>
+                            <span class="text-gray-700">Técnica guiada por computador</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-odonto-green mt-1 mr-2"></i>
+                            <span class="text-gray-700">Tecidos preservados ao máximo</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="md:w-1/2">
+                    <img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=640&q=80" alt="Dental implant procedure" class="rounded-xl shadow-lg w-full">
+                </div>
+            </div>
+            
+            <div class="flex flex-col md:flex-row items-center mb-16">
+                <div class="md:w-1/2 mb-8 md:mb-0 md:pr-12">
+                    <h3 class="text-2xl font-bold text-gray-900 mb-6 flex items-center">
+                        <span class="bg-odonto-blue text-white w-10 h-10 rounded-full flex items-center justify-center mr-4">3</span>
+                        Integração óssea
+                    </h3>
+                    <p class="text-gray-600 mb-6">
+                        Período de cicatrização onde o implante se funde ao osso, formando uma base sólida para o dente artificial.
+                    </p>
+                    <ul class="space-y-3">
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-odonto-green mt-1 mr-2"></i>
+                            <span class="text-gray-700">Monitoramento constante</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-odonto-green mt-1 mr-2"></i>
+                            <span class="text-gray-700">Tempo variável (2-6 meses)</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-odonto-green mt-1 mr-2"></i>
+                            <span class="text-gray-700">Protocolo de higiene personalizado</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="md:w-1/2">
+                    <img src="https://images.unsplash.com/photo-1629909613651-e8e72d0ba20c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=640&q=80" alt="Dentist explaining x-ray" class="rounded-xl shadow-lg w-full">
+                </div>
+            </div>
+            
+            <div class="flex flex-col md:flex-row-reverse items-center">
+                <div class="md:w-1/2 mb-8 md:mb-0 md:pl-12">
+                    <h3 class="text-2xl font-bold text-gray-900 mb-6 flex items-center">
+                        <span class="bg-odonto-blue text-white w-10 h-10 rounded-full flex items-center justify-center mr-4">4</span>
+                        Prótese sob medida
+                    </h3>
+                    <p class="text-gray-600 mb-6">
+                        Confecção e instalação da prótese dentária com estética natural e encaixe perfeito.
+                    </p>
+                    <ul class="space-y-3">
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-odonto-green mt-1 mr-2"></i>
+                            <span class="text-gray-700">Cor e forma harmonizadas</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-odonto-green mt-1 mr-2"></i>
+                            <span class="text-gray-700">Função mastigatória plena</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-odonto-green mt-1 mr-2"></i>
+                            <span class="text-gray-700">Acompanhamento pós-tratamento</span>
+                        </li>
+                    </ul>
+                    <div class="mt-8 bg-white rounded-xl p-6 shadow-md border border-gray-200">
+                        <div class="flex">
+                            <i class="fas fa-clipboard-check text-odonto-blue text-2xl mr-4 mt-1"></i>
+                            <div>
+                                <h4 class="font-bold text-gray-900">Tudo feito no mesmo lugar</h4>
+                                <p class="text-gray-600 text-sm">Sem deslocamentos, sem complicações. Da avaliação à prótese final, tudo em nossa clínica.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="md:w-1/2">
+                    <img src="https://images.unsplash.com/photo-1630569370789-d97b16ccfa2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=640&q=80" alt="Perfect dental prosthesis" class="rounded-xl shadow-lg w-full">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="py-16 px-4 bg-white">
+        <div class="container mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+                    Resultados que <span class="green-gradient-text">falam por si</span>
+                </h2>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+                    Veja o que nossos pacientes têm a dizer sobre sua experiência com implantes na OdontoBarãoSFS.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="testimonial-card bg-gray-50 rounded-xl p-6 shadow-sm hover:shadow-md border border-gray-200">
+                    <div class="flex items-center mb-4">
+                        <img src="https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=128&h=128&q=60" alt="José Carlos" class="w-12 h-12 rounded-full object-cover mr-4">
+                        <div>
+                            <h4 class="font-bold text-gray-900">José Carlos</h4>
+                            <div class="flex">
+                                <i class="fas fa-star text-yellow-400 text-sm mr-1"></i>
+                                <i class="fas fa-star text-yellow-400 text-sm mr-1"></i>
+                                <i class="fas fa-star text-yellow-400 text-sm mr-1"></i>
+                                <i class="fas fa-star text-yellow-400 text-sm mr-1"></i>
+                                <i class="fas fa-star text-yellow-400 text-sm mr-1"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 italic mb-4">
+                        "Coloquei 3 implantes na OdontoBarão e posso dizer: foi a melhor decisão da minha vida. Sinto como se tivesse meus dentes naturais de volta."
+                    </p>
+                    <div class="flex items-center text-sm text-gray-500">
+                        <i class="fas fa-calendar-alt mr-2"></i>
+                        <span>Tratamento concluído em março/2023</span>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card bg-gray-50 rounded-xl p-6 shadow-sm hover:shadow-md border border-gray-200">
+                    <div class="flex items-center mb-4">
+                        <img src="https://images.unsplash.com/photo-1534525641747-df9695b1ae67?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=128&h=128&q=60" alt="Maria Elisa" class="w-12 h-12 rounded-full object-cover mr-4">
+                        <div>
+                            <h4 class="font-bold text-gray-900">Maria Elisa</h4>
+                            <div class="flex">
+                                <i class="fas fa-star text-yellow-400 text-sm mr-1"></i>
+                                <i class="fas fa-star text-yellow-400 text-sm mr-1"></i>
+                                <i class="fas fa-star text-yellow-400 text-sm mr-1"></i>
+                                <i class="fas fa-star text-yellow-400 text-sm mr-1"></i>
+                                <i class="fas fa-star text-yellow-400 text-sm mr-1"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 italic mb-4">
+                        "Tinha medo de mudar meu sorriso. Mas fui acolhida, orientada, e o resultado ficou perfeito. Obrigada, doutores."
+                    </p>
+                    <div class="flex items-center text-sm text-gray-500">
+                        <i class="fas fa-calendar-alt mr-2"></i>
+                        <span>Tratamento concluído em janeiro/2023</span>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card bg-gray-50 rounded-xl p-6 shadow-sm hover:shadow-md border border-gray-200">
+                    <div class="flex items-center mb-4">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=128&h=128&q=60" alt="Roberto Almeida" class="w-12 h-12 rounded-full object-cover mr-4">
+                        <div>
+                            <h4 class="font-bold text-gray-900">Roberto Almeida</h4>
+                            <div class="flex">
+                                <i class="fas fa-star text-yellow-400 text-sm mr-1"></i>
+                                <i class="fas fa-star text-yellow-400 text-sm mr-1"></i>
+                                <i class="fas fa-star text-yellow-400 text-sm mr-1"></i>
+                                <i class="fas fa-star text-yellow-400 text-sm mr-1"></i>
+                                <i class="fas fa-star text-yellow-400 text-sm mr-1"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 italic mb-4">
+                        "Depois de anos usando dentadura, finalmente optei pelos implantes. A diferença na qualidade de vida é imensurável. Recomendo a todos!"
+                    </p>
+                    <div class="flex items-center text-sm text-gray-500">
+                        <i class="fas fa-calendar-alt mr-2"></i>
+                        <span>Tratamento concluído em novembro/2022</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-12 flex justify-center">
+                <a href="#" class="text-odonto-blue font-medium hover:underline flex items-center">
+                    Ver mais depoimentos
+                    <i class="fas fa-chevron-right ml-2"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Special Offer Section -->
+    <section class="py-16 px-4 bg-gradient-to-r from-odonto-blue to-odonto-green">
+        <div class="container mx-auto">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-2/3 text-center md:text-left mb-8 md:mb-0">
+                    <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Sorriso novo. Tempo limitado.</h2>
+                    <p class="text-xl text-white opacity-90 mb-6">
+                        Esta semana estamos oferecendo condições exclusivas para você recuperar seu sorriso.
+                    </p>
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-2xl mx-auto md:mx-0">
+                        <div class="bg-white bg-opacity-20 rounded-lg p-4 border border-white border-opacity-30">
+                            <div class="text-white font-bold text-2xl mb-1">🎁</div>
+                            <h4 class="text-white font-bold mb-1">Avaliação 100% gratuita</h4>
+                            <p class="text-white text-sm opacity-90">Valor: R$250</p>
+                        </div>
+                        <div class="bg-white bg-opacity-20 rounded-lg p-4 border border-white border-opacity-30">
+                            <div class="text-white font-bold text-2xl mb-1">💳</div>
+                            <h4 class="text-white font-bold mb-1">Condições facilitadas</h4>
+                            <p class="text-white text-sm opacity-90">Parcelamento em até 24x</p>
+                        </div>
+                        <div class="bg-white bg-opacity-20 rounded-lg p-4 border border-white border-opacity-30">
+                            <div class="text-white font-bold text-2xl mb-1">✨</div>
+                            <h4 class="text-white font-bold mb-1">Bônus exclusivo</h4>
+                            <p class="text-white text-sm opacity-90">Para os 10 primeiros</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="md:w-1/3">
+                    <div class="bg-white rounded-xl p-8 shadow-lg text-center">
+                        <h3 class="text-xl font-bold text-gray-900 mb-4">Só até sexta-feira!</h3>
+                        <div class="flex justify-center mb-6">
+                            <div class="text-center mx-2">
+                                <div class="bg-gray-100 rounded-lg w-16 h-16 flex items-center justify-center">
+                                    <span class="text-2xl font-bold text-odonto-blue" id="days">03</span>
+                                </div>
+                                <span class="text-xs text-gray-500 mt-1 block">Dias</span>
+                            </div>
+                            <div class="text-center mx-2">
+                                <div class="bg-gray-100 rounded-lg w-16 h-16 flex items-center justify-center">
+                                    <span class="text-2xl font-bold text-odonto-blue" id="hours">12</span>
+                                </div>
+                                <span class="text-xs text-gray-500 mt-1 block">Horas</span>
+                            </div>
+                            <div class="text-center mx-2">
+                                <div class="bg-gray-100 rounded-lg w-16 h-16 flex items-center justify-center">
+                                    <span class="text-2xl font-bold text-odonto-blue" id="minutes">45</span>
+                                </div>
+                                <span class="text-xs text-gray-500 mt-1 block">Minutos</span>
+                            </div>
+                        </div>
+                        <p class="text-sm text-gray-600 mb-6">
+                            Depois, as vagas e as condições voltam ao normal.
+                        </p>
+                        <a href="#cta" class="inline-block bg-gradient-to-r from-odonto-blue to-odonto-green text-white px-6 py-3 rounded-full font-bold hover:opacity-90 transition duration-300 btn-glow shadow-lg w-full">
+                            Quero aproveitar a oferta
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="py-16 px-4 bg-gray-50">
+        <div class="container mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+                    <span class="blue-gradient-text">FAQ</span> – Suas dúvidas, respondidas com clareza
+                </h2>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+                    Tudo o que você precisa saber antes de começar seu tratamento.
+                </p>
+            </div>
+            
+            <div class="max-w-3xl mx-auto">
+                <div class="bg-white rounded-xl shadow-sm mb-4 overflow-hidden">
+                    <button class="faq-question w-full text-left p-6 flex justify-between items-center focus:outline-none">
+                        <h3 class="text-lg font-medium text-gray-900">Implante dói?</h3>
+                        <i class="fas fa-chevron-down text-odonto-blue transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-answer px-6 pb-6 hidden">
+                        <p class="text-gray-600">
+                            Com anestesia local e técnica moderna, o procedimento é praticamente indolor. A maioria dos pacientes relata apenas um desconforto muito leve, semelhante a uma extração dentária simples. Utilizamos protocolos de conforto para garantir sua tranquilidade durante todo o processo.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-xl shadow-sm mb-4 overflow-hidden">
+                    <button class="faq-question w-full text-left p-6 flex justify-between items-center focus:outline-none">
+                        <h3 class="text-lg font-medium text-gray-900">Quanto tempo demora o tratamento?</h3>
+                        <i class="fas fa-chevron-down text-odonto-blue transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-answer px-6 pb-6 hidden">
+                        <p class="text-gray-600">
+                            Depende do caso, mas muitos pacientes voltam a sorrir com dentes fixos em menos de 3 meses. Casos mais complexos podem levar de 4 a 6 meses. Durante sua avaliação, elaboramos um cronograma personalizado com todas as etapas do seu tratamento.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-xl shadow-sm mb-4 overflow-hidden">
+                    <button class="faq-question w-full text-left p-6 flex justify-between items-center focus:outline-none">
+                        <h3 class="text-lg font-medium text-gray-900">E se meu osso estiver fraco?</h3>
+                        <i class="fas fa-chevron-down text-odonto-blue transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-answer px-6 pb-6 hidden">
+                        <p class="text-gray-600">
+                            Realizamos avaliação com tomografia e indicamos o melhor protocolo para cada caso. Quando há perda óssea, podemos realizar enxertos ósseos ou optar por implantes curtos ou zigomáticos, que se adaptam mesmo a ossos com menor volume. Cada plano é personalizado de acordo com suas características anatômicas.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-xl shadow-sm mb-4 overflow-hidden">
+                    <button class="faq-question w-full text-left p-6 flex justify-between items-center focus:outline-none">
+                        <h3 class="text-lg font-medium text-gray-900">Vocês fazem a prótese também?</h3>
+                        <i class="fas fa-chevron-down text-odonto-blue transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-answer px-6 pb-6 hidden">
+                        <p class="text-gray-600">
+                            Sim, tudo é feito dentro da clínica: implante, prótese e acompanhamento. Temos um laboratório próprio equipado com tecnologia CAD/CAM para confecção de próteses de alta precisão e estética. Isso garante maior qualidade, menor tempo de tratamento e melhor custo-benefício para você.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-xl shadow-sm mb-4 overflow-hidden">
+                    <button class="faq-question w-full text-left p-6 flex justify-between items-center focus:outline-none">
+                        <h3 class="text-lg font-medium text-gray-900">Quanto custa um implante dentário?</h3>
+                        <i class="fas fa-chevron-down text-odonto-blue transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-answer px-6 pb-6 hidden">
+                        <p class="text-gray-600">
+                            O valor varia de acordo com as necessidades de cada paciente, quantidade de implantes e tipo de prótese. Durante sua avaliação gratuita, apresentamos um orçamento detalhado com todas as opções de tratamento. Oferecemos diversas formas de pagamento, incluindo parcelamento em até 24x no cartão e descontos para pagamento à vista.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-xl shadow-sm overflow-hidden">
+                    <button class="faq-question w-full text-left p-6 flex justify-between items-center focus:outline-none">
+                        <h3 class="text-lg font-medium text-gray-900">Por quanto tempo dura um implante dentário?</h3>
+                        <i class="fas fa-chevron-down text-odonto-blue transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-answer px-6 pb-6 hidden">
+                        <p class="text-gray-600">
+                            Com os cuidados adequados, um implante pode durar a vida toda. A prótese sobre o implante geralmente precisa ser substituída após 10-15 anos, dependendo do uso e manutenção. Utilizamos apenas materiais de primeira linha e técnicas comprovadas para garantir a máxima durabilidade do seu tratamento.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-16 text-center">
+                <p class="text-lg text-gray-600 mb-6">
+                    Ainda tem dúvidas? Nossa equipe está pronta para ajudar.
+                </p>
+                <a href="tel:+5547999999999" class="inline-block bg-gradient-to-r from-odonto-blue to-odonto-green text-white px-8 py-3 rounded-full font-bold hover:opacity-90 transition duration-300 btn-glow shadow-lg">
+                    <i class="fas fa-phone-alt mr-2"></i> Fale conosco agora
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section id="cta" class="py-16 px-4 bg-white border-t border-gray-200">
+        <div class="container mx-auto">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-12 md:mb-0">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6 leading-tight">
+                        Não adie o sorriso que <span class="green-gradient-text">você merece</span>
+                    </h2>
+                    <p class="text-lg text-gray-600 mb-8 max-w-lg">
+                        Agende sua avaliação gratuita e descubra o melhor caminho para ter seus dentes fixos de volta.
+                    </p>
+                    <div class="flex items-center mb-8">
+                        <div class="flex -space-x-2 mr-4">
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=64&h=64&q=60" alt="Patient" class="w-10 h-10 rounded-full border-2 border-white">
+                            <img src="https://images.unsplash.com/photo-1551836022-d5d44eef8bd2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=64&h=64&q=60" alt="Patient" class="w-10 h-10 rounded-full border-2 border-white">
+                            <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=64&h=64&q=60" alt="Patient" class="w-10 h-10 rounded-full border-2 border-white">
+                        </div>
+                        <div class="text-sm text-gray-600">
+                            <p><span class="font-bold text-odonto-blue">Mais de 500</span> implantes colocados</p>
+                            <p class="flex items-center">
+                                <i class="fas fa-star text-yellow-400 mr-1"></i>
+                                <span>4.9/5 baseado em 127 avaliações</span>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="flex space-x-4">
+                        <div class="bg-gray-100 rounded-lg p-4 flex-1">
+                            <div class="flex items-center mb-2">
+                                <i class="fas fa-map-marker-alt text-odonto-blue mr-2"></i>
+                                <h4 class="font-bold text-gray-900">Onde estamos</h4>
+                            </div>
+                            <p class="text-sm text-gray-600">R. Exemplo, 123 - Centro, São Francisco do Sul/SC</p>
+                        </div>
+                        <div class="bg-gray-100 rounded-lg p-4 flex-1">
+                            <div class="flex items-center mb-2">
+                                <i class="fas fa-clock text-odonto-green mr-2"></i>
+                                <h4 class="font-bold text-gray-900">Horário</h4>
+                            </div>
+                            <p class="text-sm text-gray-600">Seg-Sex: 8h-19h | Sáb: 8h-12h</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="md:w-1/2">
+                    <div class="bg-gray-50 rounded-xl p-8 shadow-lg max-w-md mx-auto">
+                        <h3 class="text-2xl font-bold text-gray-900 mb-6 text-center">Agende sua avaliação gratuita</h3>
+                        <form id="appointment-form">
+                            <div class="mb-4">
+                                <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Nome completo</label>
+                                <input type="text" id="name" name="name" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-odonto-blue focus:border-transparent">
+                            </div>
+                            <div class="mb-4">
+                                <label for="phone" class="block text-sm font-medium text-gray-700 mb-1">Telefone</label>
+                                <input type="tel" id="phone" name="phone" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-odonto-blue focus:border-transparent">
+                            </div>
+                            <div class="mb-4">
+                                <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email (opcional)</label>
+                                <input type="email" id="email" name="email" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-odonto-blue focus:border-transparent">
+                            </div>
+                            <div class="mb-6">
+                                <label for="date" class="block text-sm font-medium text-gray-700 mb-1">Melhor data</label>
+                                <select id="date" name="date" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-odonto-blue focus:border-transparent">
+                                    <option value="">Selecione uma data</option>
+                                    <option value="today">Hoje</option>
+                                    <option value="tomorrow">Amanhã</option>
+                                    <option value="week">Esta semana</option>
+                                    <option value="next-week">Próxima semana</option>
+                                </select>
+                            </div>
+                            <button type="submit" class="w-full bg-gradient-to-r from-odonto-blue to-odonto-green text-white px-6 py-3 rounded-full font-bold hover:opacity-90 transition duration-300 btn-glow shadow-lg">
+                                Quero meu novo sorriso na OdontoBarãoSFS
+                            </button>
+                        </form>
+                        <div class="mt-4 text-center text-sm text-gray-500">
+                            <p>Ou se preferir, ligue agora: <a href="tel:+5547999999999" class="text-odonto-blue font-medium hover:underline">(47) 99999-9999</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12 px-4">
+        <div class="container mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <div class="flex items-center mb-4">
+                        <div class="h-10 w-10 mr-2">
+                            <div class="h-full w-full bg-gradient-to-r from-odonto-blue to-odonto-green rounded-full flex items-center justify-center text-white font-bold text-lg">OB</div>
+                        </div>
+                        <h2 class="text-xl font-bold">Odonto<span>BarãoSFS</span></h2>
+                    </div>
+                    <p class="text-gray-400 mb-4">
+                        Seu sorriso fixo. Sua vida de volta.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-bold mb-4">Links rápidos</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#benefits" class="text-gray-400 hover:text-white transition duration-300">Benefícios</a></li>
+                        <li><a href="#process" class="text-gray-400 hover:text-white transition duration-300">Como Funciona</a></li>
+                        <li><a href="#testimonials" class="text-gray-400 hover:text-white transition duration-300">Depoimentos</a></li>
+                        <li><a href="#faq" class="text-gray-400 hover:text-white transition duration-300">Dúvidas</a></li>
+                        <li><a href="#cta" class="text-gray-400 hover:text-white transition duration-300">Agendamento</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-bold mb-4">Contato</h3>
+                    <ul class="space-y-2">
+                        <li class="flex items-start">
+                            <i class="fas fa-map-marker-alt text-odonto-blue mt-1 mr-2"></i>
+                            <span class="text-gray-400">R. Exemplo, 123 - Centro, São Francisco do Sul/SC</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-phone-alt text-odonto-blue mt-1 mr-2"></i>
+                            <span class="text-gray-400">(47) 99999-9999</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-envelope text-odonto-blue mt-1 mr-2"></i>
+                            <span class="text-gray-400">contato@odontobaraosfs.com.br</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-bold mb-4">Horário de atendimento</h3>
+                    <ul class="space-y-2 text-gray-400">
+                        <li class="flex justify-between">
+                            <span>Segunda a sexta:</span>
+                            <span>8h às 19h</span>
+                        </li>
+                        <li class="flex justify-between">
+                            <span>Sábado:</span>
+                            <span>8h às 12h</span>
+                        </li>
+                        <li class="flex justify-between">
+                            <span>Domingo:</span>
+                            <span>Fechado</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 pt-6 text-center text-gray-400 text-sm">
+                <p>&copy; 2023 OdontoBarãoSFS. Todos os direitos reservados.</p>
+                <p class="mt-2">Desenvolvido com ❤️ para sorrisos perfeitos</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Fixed Button -->
+    <a href="https://wa.me/5547999999999" class="fixed bottom-6 right-6 bg-green-500 text-white w-16 h-16 rounded-full flex items-center justify-center shadow-lg hover:bg-green-600 transition duration-300 z-50">
+        <i class="fab fa-whatsapp text-2xl"></i>
+    </a>
+
+    <!-- Scripts -->
+    <script>
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // FAQ accordion
+        const faqQuestions = document.querySelectorAll('.faq-question');
+        
+        faqQuestions.forEach(question => {
+            question.addEventListener('click', () => {
+                const answer = question.nextElementSibling;
+                const icon = question.querySelector('i');
+                
+                // Close all other answers
+                faqQuestions.forEach(q => {
+                    if (q !== question) {
+                        q.nextElementSibling.classList.add('hidden');
+                        q.querySelector('i').classList.remove('rotate-180');
+                    }
+                });
+                
+                // Toggle current answer
+                answer.classList.toggle('hidden');
+                icon.classList.toggle('rotate-180');
+            });
+        });
+        
+        // Countdown timer
+        function updateCountdown() {
+            const now = new Date();
+            const endOfWeek = new Date();
+            
+            // Set to end of week (Friday 23:59:59)
+            endOfWeek.setDate(now.getDate() + (5 - now.getDay() + 7) % 7);
+            endOfWeek.setHours(23, 59, 59, 0);
+            
+            const diff = endOfWeek - now;
+            
+            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+            
+            document.getElementById('days').textContent = days.toString().padStart(2, '0');
+            document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
+            document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
+        }
+        
+        updateCountdown();
+        setInterval(updateCountdown, 60000);
+        
+        // Form submission
+        const form = document.getElementById('appointment-form');
+        
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            // Get form values
+            const name = form.elements['name'].value;
+            const phone = form.elements['phone'].value;
+            const email = form.elements['email'].value;
+            const date = form.elements['date'].value;
+            
+            // Here you would typically send this data to your backend
+            console.log('Form submitted:', { name, phone, email, date });
+            
+            // Show success message
+            alert(`Obrigado, ${name}! Sua solicitação de agendamento foi enviada com sucesso. Nossa equipe entrará em contato em breve para confirmar sua avaliação gratuita.`);
+            
+            // Reset form
+            form.reset();
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
